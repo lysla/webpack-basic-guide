@@ -222,14 +222,14 @@ Posizionandoci nel terminale sulla cartella radice del progetto, possiamo esegui
 
 Ci verranno richieste alcune informazioni riguardanti il progetto (possiamo anche dare sempre invio fino alla fine) e npm creerà per noi un file `package.json` da cui iniziare.
 
-```json
+```js
 {
   "name": "...",
   "version": "1.0.0",
   "description": "...",
   "main": "...",
   "scripts": {
-    ...
+    //...
   },
   "author": "...",
   "license": "..."
@@ -256,14 +256,14 @@ Alcune librerie sono inoltre dipendenti da altre, che verranno automaticamente s
 
 Il nostro `package.json` avrà adesso un contenuto simile a questo:
 
-```json
+```js
 {
   "name": "...",
   "version": "1.0.0",
   "description": "...",
   "main": "...",
   "scripts": {
-    ...
+    //...
   },
   "author": "...",
   "license": "...",
@@ -281,14 +281,14 @@ Abbiamo un'alternativa di installazione dipendenze, previste per quelle dipenden
 
 Il `-D` indica a npm che questa è una dipendenza di sviluppo, e npm aggiornerà il file `package.json` in questo modo:
 
-```json
+```js
 {
   "name": "...",
   "version": "1.0.0",
   "description": "...",
   "main": "...",
   "scripts": {
-    ...
+    //...
   },
   "author": "...",
   "license": "...",
@@ -353,11 +353,11 @@ Avremo quindi una struttura di questo tipo:
 
 Il nostro file `index.js` è il punto di entrata di tutti i file sorgente del progetto. E' buona norma, anche se non generalmente necessario, indicarlo come tale all'interno del file di configurazione npm `package.json`.
 
-```json
+```js
 {
-  ...
+  //...
   "main": "src/index.js",
-  ...
+  //...
 }
 ```
 
@@ -426,9 +426,9 @@ Prima di poter lanciare l'esecuzione del bundler, dovremo installare da `npm` tu
 
 Per comodità, possiamo inserirle all'interno del nostro `package.json` con un copia incolla:
 
-```json
+```js
 {
-  ...
+  //...
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
@@ -467,13 +467,13 @@ Torniamo innanzitutto a controllare che i percorsi indicati nel nostro file di c
 In particolare, è fondamentale che il percorso del file di entrata indichi correttamente il nostro `index.js`, e che il percorso della cartella per il codice compilato sia la nostra cartella `dist`:
 
 ```js
-...
+//...
 entry: './src/index.js',
 output: {
 	path: path.resolve(__dirname, 'dist'),
 	filename: 'app.js'
 },
-...
+//...
 ```
 
 Fatto questo, rimane solo da scrivere gli script che eseguiranno il nostro bundler.
@@ -481,13 +481,13 @@ Fatto questo, rimane solo da scrivere gli script che eseguiranno il nostro bundl
 Gli script di esecuzione risiedono nel file `package.json` e possono essere nominati secondo le nostre preferenze. Per chiarezza, ne creeremo due, il primo che eseguiremo in fase di sviluppo, chiamato script `dev` e il secondo che eseguiremo in fase di fine sviluppo, chiamato script `prod`.
 Aggiungeremo quindi, nel nostro `package.json`:
 
-```json
-...
+```js
+//...
 "scripts": {
 	"dev": "webpack --mode=development --display=minimal --progress --watch",
 	"prod": "webpack --mode=production --display=minimal --progress"
 },
-...
+//...
 ```
 
 Vediamo che entrambi i comandi sono simili e chiamano `webpack` per l'esecuzione. Le principali differenze sono che `dev` una volta eseguito rimarrà in _ascolto_ di ogni nostra modifica sui file sorgente e ricompilerà l'output ogni volta, senza richiedere da parte nostra l'esecuzione di un altro script. Inoltre, l'output di `dev` non sarà compresso o minificato, siccome in fase di sviluppo è più importante la velocità di compilazione rispetto alla performance del progetto. Viceversa, il comando `prod` preparerà i file compilati per l'ambiente finale di produzione, e non rimarrà in ascolto di modifiche una volta completato il processo.
