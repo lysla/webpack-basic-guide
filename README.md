@@ -617,7 +617,7 @@ body {
 
 La `tilde` (`~`) è un carattere che viene interpretato dal nostro bundler `webpack` come indicazione del percorso della cartella `node_modules`. In questo modo, stiamo importanto il file `bootstrap.scss` che vive sotto a `node_modules/bootstrap/scss/`.
 
-A questo punto possiamo eseguire `webpack` come visto precendemente eseguendo i comandi `dev` o `run` e avremo bootstrap personalizzato e incluso nel nostro file .css compilato. Possiamo ovviamente anche utilizzare le variabili all'interno del nostro SCSS principale, per esempio:
+A questo punto possiamo eseguire `webpack` come visto precendemente eseguendo i comandi `dev` o `prod` e avremo bootstrap personalizzato e incluso nel nostro file .css compilato. Possiamo ovviamente anche utilizzare le variabili all'interno del nostro SCSS principale, per esempio:
 
 ```scss
 // Importazione del file parziale _variables.scss
