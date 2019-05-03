@@ -1,6 +1,8 @@
 # Le basi di webpack, npm, nvm, scss, babel
 
-### Compilazione e bundling delle risorse Javascript con Webpack sfruttando NodeJS, spiegato semplicemente.
+## Compilazione e bundling delle risorse Javascript con Webpack sfruttando NodeJS, spiegato semplicemente.
+
+### In questo repository è presente l'esempio completo della guida.
 
 # Bundler (webpack)
 
@@ -633,5 +635,7 @@ body {
 ```
 
 Lo stesso concetto può essere riapplicato per qualsiasi libreria o framework che prevede la personalizzazione tramite SCSS.
+
+In questo repository è presente l'esempio completo della guida.
 
 _Happy coding!_

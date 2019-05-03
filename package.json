@@ -1,0 +1,38 @@
+{
+  "name": "webpack-basic-guide",
+  "version": "1.0.0",
+  "description": "webpack-basic-guide",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "webpack --mode=development --display=minimal --progress --watch",
+    "prod": "webpack --mode=production --display=minimal --progress"
+  },
+  "author": "lysla",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lysla/webpack-basic-guide.git"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "autoprefixer": "^9.5.0",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.1",
+    "file-loader": "^3.0.1",
+    "mini-css-extract-plugin": "^0.6.0",
+    "node-sass": "^4.11.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0"
+  }
+}
