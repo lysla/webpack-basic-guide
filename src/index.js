@@ -1,4 +1,7 @@
-import './scss/index.scss';
-
+// Bootstrap Framework
+/* import './scss/index.scss';
 import 'popper.js';
-import 'bootstrap';
+import 'bootstrap'; */
+
+// Tailwind CSS Framework
+import './pcss/index.pcss';
