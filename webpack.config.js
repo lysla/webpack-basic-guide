@@ -13,20 +13,29 @@ module.exports = {
   // Cartella di output per i file compilati e nome del file Javascript
   output: {
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/dist/',
     filename: 'app.js'
+  },
+  // Configurazione di sviluppo per l'Hot Module Replacement
+  devtool: 'source-map',
+  devServer: {
+    contentBase: './',
+    publicPath: '/dist/',
+    hot: true,
+    watchContentBase: true
   },
   module: {
     rules: [
       // Loaders per i file di tipo CSS e SCSS
       {
-        test: /\.(sa|sc|c)ss$/,
+        test: /\.(sa|sc|pc|c)ss$/,
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
           {
             loader: 'postcss-loader',
             options: {
-              plugins: () => [require('autoprefixer')]
+              plugins: () => [require('tailwindcss'), require('autoprefixer')]
             }
           },
           'sass-loader'
