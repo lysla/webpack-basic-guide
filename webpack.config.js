@@ -13,8 +13,8 @@ module.exports = {
   // Cartella di output per i file compilati e nome del file Javascript
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/dist/',
-    filename: 'app.js'
+    publicPath: './',
+    filename: 'app.js',
   },
   // Configurazione di sviluppo per l'Hot Module Replacement
   devtool: 'source-map',
