@@ -1,19 +1,133 @@
+//#region custom settings
+@function px-to-rem($px-size) {
+    $rem-size: $px-size / 16px;
+    @return #{$rem-size}rem;
+}
+
+//#region font sizes
+$font-size-huge: px-to-rem(110px);
+$font-size-extra: px-to-rem(60px);
+$font-size-title-big: px-to-rem(42px);
+$font-size-title: px-to-rem(37px);
+$font-size-subtitle: px-to-rem(24px);
+$font-size-slogan: px-to-rem(18px);
+$font-size-default: px-to-rem(16px);
+$font-size-note: px-to-rem(15px);
+$font-size-tip: px-to-rem(12px);
+$font-sizes: (
+    "font-size-huge": $font-size-huge,
+    "font-size-extra": $font-size-extra,
+    "font-size-title-big": $font-size-title-big,
+    "font-size-title": $font-size-title,
+    "font-size-subtitle": $font-size-subtitle,
+    "font-size-slogan": $font-size-slogan,
+    "font-size-default": $font-size-default,
+    "font-size-note": $font-size-note,
+    "font-size-tip": $font-size-tip,
+);
+@each $name, $font-size in $font-sizes {
+    .#{$name} {
+        font-size: $font-size !important;
+    }
+}
+//#endregion
+
+//#region font weights
+$font-weight-thin: 100;
+$font-weight-extralight: 200;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+$font-weight-black: 900;
+$font-weights: (
+    "font-weight-thin": $font-weight-thin,
+    "font-weight-extralight": $font-weight-extralight,
+    "font-weight-light": $font-weight-light,
+    "font-weight-normal": $font-weight-normal,
+    "font-weight-medium": $font-weight-medium,
+    "font-weight-semibold": $font-weight-semibold,
+    "font-weight-bold": $font-weight-bold,
+    "font-weight-extrabold": $font-weight-extrabold,
+    "font-weight-black": $font-weight-black,
+);
+@each $name, $font-weight in $font-weights {
+    .#{$name} {
+        font-weight: $font-weight !important;
+    }
+}
+//#endregion
+
+//#region trackings (letter spacing)
+$tracking-tigther: -0.05em;
+$tracking-tight: -0.025em;
+$tracking-normal: 0;
+$tracking-wide: 0.025em;
+$tracking-wider: 0.05em;
+$tracking-widest: 0.1em;
+$trackings: (
+    "tracking-tigther": $tracking-tigther,
+    "tracking-tight": $tracking-tight,
+    "tracking-normal": $tracking-normal,
+    "tracking-wide": $tracking-wide,
+    "tracking-wider": $tracking-wider,
+    "tracking-widest": $tracking-widest,
+);
+@each $name, $tracking in $trackings {
+    .#{$name} {
+        letter-spacing: $tracking !important;
+    }
+}
+//#endregion
+
+//#region leadings (line height)
+$leading-none: 1;
+$leading-tight: 1.25;
+$leading-snug: 1.375;
+$leading-normal: 1.5;
+$leading-relaxed: 1.625;
+$leading-loose: 2;
+$leadings: (
+    "leading-none": $leading-none,
+    "leading-tight": $leading-tight,
+    "leading-snug": $leading-snug,
+    "leading-normal": $leading-normal,
+    "leading-relaxed": $leading-relaxed,
+    "leading-loose": $leading-loose,
+);
+@each $name, $leading in $leadings {
+    .#{$name} {
+        line-height: $leading !important;
+    }
+}
+//#endregion
+//#endregion
+
 //#region bootstrap variables
+$container-max-widths: (
+    xl: 1400px,
+);
 $enable-responsive-font-sizes: true;
-$enable-transitions: true;
+$enable-transitions: false;
 $enable-shadows: false;
 $enable-rounded: false;
 $enable-caret: false;
-$breadcrumb-divider: quote('>');
+$breadcrumb-divider: quote(">");
 
-$text-color: #0068c1;
+$text-color: #000f2d;
 $body-bg: #ffffff;
-$font-family-sans-serif: 'Nunito', Helvetica, Arial, sans-serif;
-$font-family-serif: 'Nunito', serif;
-$light: #f7f8f7;
-$primary: #0081c8;
-$secondary: #f9dd00;
-$danger: #ed2024;
-$link-color: #0068c1;
-$info: #122e60;
+$body-color: $text-color;
+$font-family-sans-serif: "Nunito", Helvetica, Arial, sans-serif;
+$font-family-serif: "Nunito", serif;
+$dark: #606060;
+$light: #f5f5f5;
+$primary: $text-color;
+$secondary: #00b772;
+$border-color: #eeeeee;
+$danger: #e50019;
+$success: $secondary;
+$info: #d2d2d2;
+$link-color: $primary;
 //#endregion

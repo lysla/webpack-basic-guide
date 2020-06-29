@@ -1,6 +1,18 @@
 // Importazione del file parziale _variables.scss
-@import 'variables';
+@import "variables";
 // Importazione del file SCSS di Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
-// Stili del progetto
+//#region misc
+* {
+    outline: none !important;
+}
+a.text-secondary:hover,
+a.text-secondary:focus {
+    color: $secondary !important;
+}
+::selection {
+    background: $secondary;
+    color: $white;
+}
+//#endregion
