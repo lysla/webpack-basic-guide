@@ -6,6 +6,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 // Plugin per la minificazione e ottimizzazione del file .css
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+// Plugin che rimuove il css non utilizzato
+const PurgecssPlugin = require('purgecss-webpack-plugin');
 
 module.exports = {
   // File Javascript di entrata pre-compilato
@@ -73,6 +75,10 @@ module.exports = {
     // Nome del file di output .css
     new MiniCssExtractPlugin({
       filename: 'app.css'
+    }),
+    // Inizializzazione del plugin per rimuovere i css inutilizzati
+    new PurgecssPlugin({
+      paths: ['./index.html'],
     }),
     // Globalizzazione del plugin jQuery
     new webpack.ProvidePlugin({
