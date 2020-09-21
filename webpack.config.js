@@ -74,7 +74,9 @@ module.exports = (env, argv) => {
       }),
       // Inizializzazione del plugin per rimuovere i css inutilizzati
       argv.mode === 'production' ? new PurgecssPlugin({
-        paths: require('glob').sync(`./*.html`, { nodir: true }),
+        paths: require('glob').sync(`./../Views/**/*`, { nodir: true }),
+        variables: true,
+        safelist: [/slick/, /parallax/i, /show/]
       }) : function () { return false },
       // Globalizzazione del plugin jQuery
       new webpack.ProvidePlugin({
