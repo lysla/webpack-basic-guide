@@ -15,4 +15,18 @@ a.text-secondary:focus {
     background: $secondary;
     color: $white;
 }
+*::-webkit-scrollbar {
+    width: 7px;
+}
+*::-webkit-scrollbar-track {
+    background: $light;
+    border: $white;
+}
+*::-webkit-scrollbar-thumb {
+    background: $text-color;
+    border-radius: 7px;
+}
+*::-webkit-scrollbar-thumb:hover {
+    background: $primary;
+}
 //#endregion
