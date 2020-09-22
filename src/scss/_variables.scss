@@ -103,6 +103,15 @@ $leadings: (
     }
 }
 //#endregion
+//#region limits (max-width)
+$i: 0;
+@while $i <= 2000 {
+    $i: $i + 50;
+    .is-limited-#{$i} {
+        max-width: #{$i}px;
+    }    
+}
+//#endregion
 //#endregion
 
 //#region bootstrap variables
