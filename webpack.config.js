@@ -76,7 +76,14 @@ module.exports = (env, argv) => {
       argv.mode === 'production' ? new PurgecssPlugin({
         paths: require('glob').sync(`./../Views/**/*`, { nodir: true }),
         variables: true,
-        safelist: [/slick/, /parallax/i, /show/]
+        safelist: {
+          deep: [
+            /slick/,
+            /show/,
+            /sticky/,
+            /cc/,
+          ],
+        },
       }) : function () { return false },
       // Globalizzazione del plugin jQuery
       new webpack.ProvidePlugin({
