@@ -75,6 +75,7 @@ module.exports = (env, argv) => {
       // Inizializzazione del plugin per rimuovere i css inutilizzati
       argv.mode === 'production' ? new PurgecssPlugin({
         paths: require('glob').sync(`./../Views/**/*`, { nodir: true }),
+        //paths: require("glob-all").sync(['./Pages/**/*', './Controls/**/*', './*.{aspx,master}'], { nodir: true }),
         variables: true,
         safelist: {
           deep: [
