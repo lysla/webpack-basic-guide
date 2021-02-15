@@ -5,3 +5,5 @@ import 'bootstrap';
 
 // Tailwind CSS Framework
 //import './pcss/index.pcss';
+
+import "slick-carousel";

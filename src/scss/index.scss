@@ -2,10 +2,14 @@
 @import "variables";
 // Importazione del file SCSS di Bootstrap
 @import "~bootstrap/scss/bootstrap";
+// Importazione del file per i carousel Slick
+@import "~slick-carousel/slick/slick";
+@import "~slick-carousel/slick/slick-theme";
 
 //#region misc
 * {
     outline: none !important;
+    -webkit-font-smoothing: antialiased;
 }
 a.text-secondary:hover,
 a.text-secondary:focus {
