@@ -22,10 +22,10 @@ module.exports = (env, argv) => {
     // Configurazione di sviluppo per l'Hot Module Replacement
     devtool: 'source-map',
     devServer: {
-      contentBase: './',
-      publicPath: '/dist/',
+      //contentBase: './',
+      //publicPath: './dist/',
+      //watchContentBase: true,
       hot: true,
-      watchContentBase: true
     },
     module: {
       rules: [
