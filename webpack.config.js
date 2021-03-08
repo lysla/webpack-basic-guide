@@ -22,9 +22,9 @@ module.exports = (env, argv) => {
     // Configurazione di sviluppo per l'Hot Module Replacement
     devtool: 'source-map',
     devServer: {
-      //contentBase: './',
-      //publicPath: './dist/',
-      //watchContentBase: true,
+      contentBase: './',
+      publicPath: '/dist/',
+      watchContentBase: true,
       hot: true,
     },
     module: {
@@ -74,7 +74,7 @@ module.exports = (env, argv) => {
       }),
       // Inizializzazione del plugin per rimuovere i css inutilizzati
       argv.mode === 'production' ? new PurgecssPlugin({
-        paths: require('glob').sync(`./../Views/**/*`, { nodir: true }),
+        paths: require('glob').sync(`./*.html`, { nodir: true }),
         //paths: require("glob-all").sync(['./Pages/**/*', './Controls/**/*', './*.{aspx,master}'], { nodir: true }),
         variables: true,
         safelist: {
@@ -82,6 +82,7 @@ module.exports = (env, argv) => {
             /slick/,
             /show/,
             /sticky/,
+            /zoom/,
             /cc/,
           ],
         },
