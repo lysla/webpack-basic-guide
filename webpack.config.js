@@ -84,6 +84,11 @@ module.exports = (env, argv) => {
             /sticky/,
             /zoom/,
             /cc/,
+            /hamburger/,
+            /fancy/,
+            /loaded/,
+            /active/,
+            /open/
           ],
         },
       }) : function () { return false },
