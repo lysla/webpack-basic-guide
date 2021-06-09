@@ -1,10 +1,19 @@
 // Importazione del file parziale _variables.scss
 @import "variables";
-// Importazione del file SCSS di Bootstrap
+
+// Importazione dei file SCSS di Bootstrap con utilizzo delle sue Utilities API
+@import "~bootstrap/scss/vendor/rfs";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "bs-colors";
+@import "~bootstrap/scss/utilities";
+@import "bs-utilities";
 @import "~bootstrap/scss/bootstrap";
+
 // Importazione del file per i carousel Slick
 @import "~slick-carousel/slick/slick";
 @import "~slick-carousel/slick/slick-theme";
+
 // Importazione del file per animazione menu hambuger
 @import "~hamburgers/_sass/hamburgers/hamburgers";
 
@@ -12,6 +21,9 @@
 * {
     outline: none !important;
     -webkit-font-smoothing: antialiased;
+    &:focus {
+        box-shadow: none !important;
+    }
 }
 a.text-secondary:hover,
 a.text-secondary:focus {

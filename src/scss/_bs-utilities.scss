@@ -1,0 +1,90 @@
+$utilities: map-merge(
+    $utilities,
+    (
+        "font-size":
+            map-merge(
+                map-get($utilities, "font-size"),
+                (
+                    values:
+                        map-merge(
+                            map-get(map-get($utilities, "font-size"), "values"),
+                            (
+                                "huge": rfs-fluid-value(110px),
+                                "extra": rfs-fluid-value(60px),
+                                "title": rfs-fluid-value(42px),
+                                "subtitle": rfs-fluid-value(37px),
+                                "slogan": rfs-fluid-value(24px),
+                                "default": rfs-fluid-value(18px),
+                                "note": rfs-fluid-value(16px),
+                                "tip": rfs-fluid-value(15px),
+                            )
+                        ),
+                )
+            ),
+        "font-weight":
+            map-merge(
+                map-get($utilities, "font-weight"),
+                (
+                    values:
+                        map-merge(
+                            map-get(map-get($utilities, "font-weight"), "values"),
+                            (
+                                "thin": 100,
+                                "extralight": 200,
+                                "light": 300,
+                                "normal": 400,
+                                "medium": 500,
+                                "semibold": 600,
+                                "bold": 700,
+                                "extrabold": 800,
+                                "black": 900,
+                            )
+                        ),
+                )
+            ),
+        "line-height":
+            map-merge(
+                map-get($utilities, "line-height"),
+                (
+                    values:
+                        map-merge(
+                            map-get(map-get($utilities, "line-height"), "values"),
+                            (
+                                "none": 1,
+                                "tight": 1.25,
+                                "snug": 1.375,
+                                "normal": 1.5,
+                                "relaxed": 1.625,
+                                "loose": 2,
+                            )
+                        ),
+                )
+            ),
+        "font-family":
+            map-merge(
+                map-get($utilities, "font-family"),
+                (
+                    values:
+                        map-merge(
+                            map-get(map-get($utilities, "font-family"), "values"),
+                            (
+                                "serif": $font-family-serif,
+                            )
+                        ),
+                )
+            ),
+        "letter-spacing": (
+            property: letter-spacing,
+            class: ls,
+            responsive: true,
+            values: (
+                "tigther": -0.05em,
+                "tight": -0.025em,
+                "normal": 0,
+                "wide": 0.025em,
+                "wider": 0.05em,
+                "widest": 0.1em,
+            ),
+        ),
+    )
+);
