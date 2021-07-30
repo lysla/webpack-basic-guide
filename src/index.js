@@ -1,3 +1,6 @@
+import jquery from 'jquery';
+window.jQuery = window.$ = jquery;
+
 // Bootstrap Framework
 import './scss/index.scss';
 import '@popperjs/core';

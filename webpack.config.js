@@ -94,7 +94,8 @@ module.exports = (env, argv) => {
       }) : function () { return false },
       // Globalizzazione del plugin jQuery
       new webpack.ProvidePlugin({
-        $: 'jquery'
+        $: 'jquery',
+        jQuery: 'jquery'
       })
     ]
   }
