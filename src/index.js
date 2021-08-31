@@ -6,9 +6,6 @@ import './scss/index.scss';
 import '@popperjs/core';
 import 'bootstrap';
 
-// Tailwind CSS Framework
-//import './pcss/index.pcss';
-
 import "slick-carousel";
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 

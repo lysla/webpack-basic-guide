@@ -16,16 +16,17 @@ module.exports = (env, argv) => {
     // Cartella di output per i file compilati e nome del file Javascript
     output: {
       path: path.resolve(__dirname, 'dist'),
-      publicPath: './',
       filename: 'app.js',
+      clean: true,
+      assetModuleFilename: '[hash][ext][query]',
     },
     // Configurazione di sviluppo per l'Hot Module Replacement
     devtool: 'source-map',
     devServer: {
-      contentBase: './',
-      publicPath: '/dist/',
-      watchContentBase: true,
-      hot: true,
+      static: './',
+      devMiddleware: {
+        publicPath: "/dist/"
+      },
     },
     module: {
       rules: [
@@ -39,14 +40,13 @@ module.exports = (env, argv) => {
             'sass-loader'
           ]
         },
-        // Loader per i file risorse, come immagini e font, inclusi all'interno del CSS, SCSS o Javascript. Quando il file pesa meno del limite indicato viene automaticamente generato un data base64, altrimenti la risorsa viene impacchettata e spostata nella cartella di output
+        // Risorse assets
         {
           test: /\.(jpg|jpeg|gif|png|woff|woff2|eot|ttf|svg)$/,
-          use: {
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-              name: '[name].[ext]?v=[contenthash]'
+          type: 'asset',
+          parser: {
+            dataUrlCondition: {
+              maxSize: 8192
             }
           }
         },
@@ -65,6 +65,7 @@ module.exports = (env, argv) => {
     },
     // Assegnazione dei plugin di minificazione e ottimizzazione
     optimization: {
+      minimize: true,
       minimizer: [new TerserJSPlugin({}), new CssMinimizerPlugin({})]
     },
     plugins: [
