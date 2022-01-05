@@ -1,23 +1,52 @@
+//#region custom fonts
+/* @font-face {
+    font-family: "My-Font";
+    src: url("./../fonts/My-Font.woff") format("woff"),
+      url("./../fonts/My-Font.eot"),
+      url("./../fonts/My-Font.eot?#iefix") format("embedded-opentype");
+    font-weight: normal;
+    font-style: normal;
+} */
+//#endregion
 //#region limits (max-width)
 $i: 0;
 @while $i <= 2000 {
-    $i: $i + 50;
-    .is-limited-#{$i} {
-        max-width: #{$i}px;
-    }
+  $i: $i + 50;
+  .is-limited-#{$i} {
+    max-width: #{$i}px;
+  }
 }
 //#endregion
 
 //#region bootstrap variables
 $container-max-widths: (
-    xl: 1400px,
+  xl: 1400px,
 );
-$grid-gutter-width: 30px;
+
 $enable-transitions: false;
 $enable-shadows: false;
 $enable-rounded: false;
 $enable-caret: false;
 $breadcrumb-divider: quote(">");
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+);
+$grid-gutter-width: 1.5rem;
+$gutters: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+);
 
 $font-family-base: "Nunito", Helvetica, Arial, sans-serif;
 $font-family-serif: "Nunito", serif;
