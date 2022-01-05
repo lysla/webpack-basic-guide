@@ -7,6 +7,7 @@ import "@popperjs/core";
 import "bootstrap";
 
 import "slick-carousel";
+import hcSticky from "hc-sticky";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
 //#region bootstrap navbar + hamburger + body scroll lock
@@ -24,13 +25,10 @@ navbarMain.addEventListener("hidden.bs.collapse", function () {
 //#endregion
 
 //#region stickybar
-const stickybar = document.querySelector(".stickybar");
-let stickybarTop = stickybar.offsetTop;
-window.addEventListener("scroll", () => {
-  if (window.scrollY > stickybarTop) {
-    stickybar.classList.add("stickybar--sticked");
-  } else {
-    stickybar.classList.remove("stickybar--sticked");
-  }
+document.addEventListener("DOMContentLoaded", function () {
+  new hcSticky(".stickybar", {
+    stickTo: "body",
+    stickyClass: "stickybar--sticked",
+  });
 });
 //#endregion
