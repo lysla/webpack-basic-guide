@@ -32,3 +32,13 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 //#endregion
+
+//#region slider
+$(function () {
+  $(".slider").slick({
+    arrows: false,
+    centerMode: true,
+    variableWidth: true,
+  });
+});
+//#endregion

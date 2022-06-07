@@ -60,3 +60,20 @@ a.text-secondary:focus {
   }
 }
 //#endregion
+
+//#region slider
+.slider {
+  &__slide {
+    padding: 0 rfs-value(10px);
+  }
+  &__image {
+    > img {
+      width: 100%;
+      max-width: 75vw;
+      @include media-breakpoint-up(lg) {
+        max-width: 1300px;
+      }
+    }
+  }
+}
+//#endregion
