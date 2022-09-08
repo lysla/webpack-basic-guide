@@ -1,11 +1,11 @@
-// Importazione del file parziale _variables.scss
-@import "variables";
-
 // Importazione dei file SCSS di Bootstrap con utilizzo delle sue Utilities API
 @import "~bootstrap/scss/vendor/rfs";
 @import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/variables";
 @import "bs-colors";
+@import "variables";
+@import "~bootstrap/scss/variables";
+@import "bs-maps";
+@import "~bootstrap/scss/maps";
 @import "~bootstrap/scss/utilities";
 @import "bs-utilities";
 @import "~bootstrap/scss/bootstrap";
