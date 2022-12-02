@@ -77,3 +77,18 @@ a.text-secondary:focus {
   }
 }
 //#endregion
+
+//#region moncaljs
+.moncaljs {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    &__day {
+      &--prev,
+      &--next {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+//#endregion
