@@ -55,6 +55,18 @@ $(function () {
       date: new Date(),
       html: "<p>evento</p>",
     },
+    {
+      date: new Date(),
+      html: "<p>evento</p>",
+    },
+    {
+      date: new Date(),
+      html: "<p>evento</p>",
+    },
+    {
+      date: new Date(),
+      html: "<p>evento</p>",
+    },
   ];
 
   function initMoncalJs(
@@ -132,7 +144,7 @@ $(function () {
         }">
           <span class="moncaljs__grid__day__number">
           ${moment(day).format("DD")} 
-            <span>${moment(day).format("dddd")}</span>
+            <span>${moment(day).format("dd")}</span>
           </span>
           ${htmlDayEvents}
         </div>

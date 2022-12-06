@@ -119,6 +119,7 @@ a.text-secondary:focus {
     @include media-breakpoint-down(lg) {
       display: block;
       border-radius: 0;
+      border-top: 0;
     }
     &__head {
       border-right: 1px solid $moncaljs-border-color;
@@ -143,9 +144,6 @@ a.text-secondary:focus {
       @include media-breakpoint-down(lg) {
         height: auto;
         border-right: 0;
-        &:first-child {
-          border-top: 0;
-        }
       }
       &:nth-child(7n) {
         border-right: 0;
@@ -157,7 +155,12 @@ a.text-secondary:focus {
         }
       }
       &__number {
-        display: inline-block;
+        display: block;
+        @include media-breakpoint-down(lg) {
+          float: left;
+          padding-right: 10px;
+          width: 10%;
+        }
         > span {
           display: none;
           @include media-breakpoint-down(lg) {
@@ -173,6 +176,8 @@ a.text-secondary:focus {
         overflow: hidden;
         @include media-breakpoint-down(lg) {
           height: auto;
+          width: 90%;
+          float: right;
         }
         &:hover {
           height: auto;
