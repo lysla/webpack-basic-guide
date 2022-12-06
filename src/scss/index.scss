@@ -80,13 +80,103 @@ a.text-secondary:focus {
 
 //#region moncaljs
 .moncaljs {
+  $moncaljs-gutter: 1rem;
+  $moncaljs-border-color: rgba(0, 0, 0, 0.2);
+  padding-left: $moncaljs-gutter;
+  padding-right: $moncaljs-gutter;
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-left: -$moncaljs-gutter;
+    margin-right: -$moncaljs-gutter;
+    margin-bottom: 5px;
+  }
+  &__action {
+    padding-left: $moncaljs-gutter;
+    padding-right: $moncaljs-gutter;
+    &--prev {
+      &::before {
+        content: "\2039";
+      }
+    }
+    &--next {
+      &::before {
+        content: "\203A";
+      }
+    }
+  }
+  &__title {
+    padding-left: $moncaljs-gutter;
+    padding-right: $moncaljs-gutter;
+  }
   &__grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
+    border: 1px solid $moncaljs-border-color;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    overflow: hidden;
+    @include media-breakpoint-down(lg) {
+      display: block;
+      border-radius: 0;
+    }
+    &__head {
+      border-right: 1px solid $moncaljs-border-color;
+      padding: 10px;
+      color: white;
+      background: black;
+      text-align: center;
+      @include media-breakpoint-down(lg) {
+        display: none;
+      }
+      &:nth-child(7n) {
+        border-right: 0;
+      }
+    }
     &__day {
+      position: relative;
+      height: 150px;
+      overflow: auto;
+      border-right: 1px solid $moncaljs-border-color;
+      border-top: 1px solid $moncaljs-border-color;
+      padding: 10px;
+      @include media-breakpoint-down(lg) {
+        height: auto;
+        border-right: 0;
+        &:first-child {
+          border-top: 0;
+        }
+      }
+      &:nth-child(7n) {
+        border-right: 0;
+      }
       &--prev,
       &--next {
-        opacity: 0.5;
+        * {
+          opacity: 0.5;
+        }
+      }
+      &__number {
+        display: inline-block;
+        > span {
+          display: none;
+          @include media-breakpoint-down(lg) {
+            display: inline-block;
+          }
+        }
+      }
+      &__event {
+        background-color: $moncaljs-border-color;
+        height: 50px;
+        padding: 5px;
+        margin-bottom: 5px;
+        overflow: hidden;
+        @include media-breakpoint-down(lg) {
+          height: auto;
+        }
+        &:hover {
+          height: auto;
+        }
       }
     }
   }

@@ -1,4 +1,5 @@
 import * as Moment from "moment";
+import "moment/locale/it";
 import { extendMoment } from "moment-range";
 export const getDaysInAMonth = (
   year = +Moment().format("YYYY"),
@@ -14,15 +15,15 @@ export const getDaysInAMonth = (
   const weeks = [];
   const days = Array.from(monthRange.by("day"));
   days.forEach((it) => {
-    if (!weeks.includes(it.week())) {
-      weeks.push(it.week());
+    if (!weeks.includes(it.isoWeek())) {
+      weeks.push(it.isoWeek());
     }
   });
 
   const calendar = [];
   weeks.forEach((week) => {
-    const firstWeekDay = moment([year, month]).week(week).day(0);
-    const lastWeekDay = moment([year, month]).week(week).day(6);
+    const firstWeekDay = moment([year, month]).isoWeek(week).isoWeekday(1);
+    const lastWeekDay = moment([year, month]).isoWeek(week).isoWeekday(7);
     const weekRange = moment.range(firstWeekDay, lastWeekDay);
     calendar.push(Array.from(weekRange.by("day")));
   });

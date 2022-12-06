@@ -53,7 +53,7 @@ $(function () {
   let events = [
     {
       date: new Date(),
-      html: "<p>pappa</p>",
+      html: "<p>evento</p>",
     },
   ];
 
@@ -94,11 +94,11 @@ $(function () {
 
     let htmlHeader = `
     <div class="moncaljs__header">
-      <div class="moncaljs__action moncaljs__action--prev" data-month="${prevMonth}" data-year="${prevYear}">prev</div>
-      <div class="moncaljs__action moncaljs__action--next" data-month="${nextMonth}" data-year="${nextYear}">next</div>
+      <div class="moncaljs__action moncaljs__action--prev" data-month="${prevMonth}" data-year="${prevYear}"></div>
+      <div class="moncaljs__action moncaljs__action--next" data-month="${nextMonth}" data-year="${nextYear}"></div>
       <div class="moncaljs__title">${moment()
         .month(currMonth)
-        .format("MMMM")}</div>
+        .format("MMMM")} ${currYear}</div>
     </div>
     `;
 
@@ -131,7 +131,8 @@ $(function () {
             : ""
         }">
           <span class="moncaljs__grid__day__number">
-          ${moment(day).format("DD")}
+          ${moment(day).format("DD")} 
+            <span>${moment(day).format("dddd")}</span>
           </span>
           ${htmlDayEvents}
         </div>
@@ -139,8 +140,18 @@ $(function () {
       });
     });
 
+    let htmlDayNames = "";
+
+    weeks[0].forEach((day) => {
+      htmlDayNames += `
+      <div class="moncaljs__grid__head">
+        ${moment(day).format("dddd")}
+      </div>`;
+    });
+
     let htmlGrid = `
     <div class="moncaljs__grid">
+        ${htmlDayNames}
         ${htmlDays}
     </div>
     `;
