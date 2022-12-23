@@ -24,8 +24,14 @@ export const Moncal = function (events, el, options) {
 
     const calendar = [];
     weeks.forEach((week) => {
-      const firstWeekDay = moment([year, month]).isoWeek(week).isoWeekday(1);
-      const lastWeekDay = moment([year, month]).isoWeek(week).isoWeekday(7);
+      const firstWeekDay = moment([year, month])
+        .isoWeekYear(year)
+        .isoWeek(week)
+        .isoWeekday(1);
+      const lastWeekDay = moment([year, month])
+        .isoWeekYear(year)
+        .isoWeek(week)
+        .isoWeekday(7);
       const weekRange = moment.range(firstWeekDay, lastWeekDay);
       calendar.push(Array.from(weekRange.by("day")));
     });
