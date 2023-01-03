@@ -23,10 +23,11 @@ $container-max-widths: (
   xl: 1400px,
 );
 
-$enable-transitions: false;
+$enable-transitions: true;
 $enable-shadows: false;
-$enable-rounded: false;
+$enable-rounded: true;
 $enable-caret: false;
+$enable-negative-margins: true;
 $breadcrumb-divider: quote(">");
 
 $spacer: 1rem;
@@ -38,29 +39,29 @@ $spacers: (
   4: $spacer * 1.5,
   5: $spacer * 3,
 );
-$grid-gutter-width: 1.5rem;
+$grid-gutter-width: 3rem;
 $gutters: (
   0: 0,
-  1: $spacer * 0.25,
-  2: $spacer * 0.5,
-  3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 3,
+  1: $grid-gutter-width * 0.25,
+  2: $grid-gutter-width * 0.5,
+  3: $grid-gutter-width,
+  4: $grid-gutter-width * 1.5,
+  5: $grid-gutter-width * 3,
 );
 
-$font-family-base: "Nunito", Helvetica, Arial, sans-serif;
-$font-family-serif: "Nunito", serif;
-$text-color: #000f2d;
+$font-family-base: "Montserrat", Helvetica, Arial, sans-serif;
+$font-family-serif: "Anybody", serif;
+$text-color: #2a2b27; //
 $body-bg: #ffffff;
 $body-color: $text-color;
 $link-color: $text-color;
 $border-color: #eeeeee;
 
-$primary: #00bddf;
-$secondary: #00b772;
+$primary: #b8e600; //
+$secondary: #2a2b27; //
 $success: #00b772;
 $info: #d2d2d2;
-$warning: #e56700;
+$warning: #e6c60b; //
 $danger: #e50019;
 $light: #f5f5f5;
 $dark: #606060;
@@ -73,11 +74,11 @@ $slick-loader-path: "~slick-carousel/slick/";
 
 //#region hamburgers variables
 $hamburger-padding-x: 0px;
-$hamburger-padding-y: 15px;
-$hamburger-layer-width: 30px;
+$hamburger-padding-y: 10px;
+$hamburger-layer-width: 25px;
 $hamburger-layer-height: 2px;
 $hamburger-layer-spacing: 5px;
-$hamburger-layer-color: $primary;
+$hamburger-layer-color: $secondary;
 $hamburger-layer-border-radius: 0px;
 $hamburger-hover-opacity: 1;
 $hamburger-active-layer-color: $hamburger-layer-color;

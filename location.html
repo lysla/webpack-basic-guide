@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+	<title>iFame App</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Anybody:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="./dist/app.css">
+</head>
+
+<body>
+
+	<div class="stickybar">
+		<nav class="navbar">
+			<div class="container-fluid [ d-block ]">
+				<div class="row [ align-items-center ]">
+					<div class="col-3">
+						<a class="navbar-brand" href="#">
+							<img src="./images/logo-minimal.svg" alt="">
+						</a>
+					</div>
+					<div class="col-6">
+						<div class="navbar__search [ d-flex ]">
+							<div class="dropdown">
+								<button class="btn btn-secondary dropdown-toggle" type="button"
+									data-bs-toggle="dropdown">
+									Indirizzo ↓
+								</button>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="#">Nome</a></li>
+									<li><a class="dropdown-item" href="#">Tipo di cucina</a></li>
+									<li><a class="dropdown-item" href="#">Intolleranze</a></li>
+									<li><a class="dropdown-item" href="#">Piatto</a></li>
+								</ul>
+							</div>
+							<input type="text" class="form-control">
+							<button class="btn btn-primary">Cerca</button>
+						</div>
+					</div>
+					<div class="col-3">
+						<div class="row [ align-items-center justify-content-end ]">
+							<div class="col-auto">
+								<a href="">Accedi</a>
+							</div>
+							<div class="col-auto">
+								<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+									data-bs-target="#offcanvasNav">
+									<span class="hamburger hamburger--spring">
+										<span class="hamburger-box">
+											<span class="hamburger-inner"></span>
+										</span>
+									</span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<!-- #region offcanvas navigation -->
+	<div class="offcanvas offcanvas-end [ border-start-0 ]" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+		id="offcanvasNav">
+		<div class="offcanvas-header">
+			<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+		</div>
+		<div class="offcanvas-body">
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">Home</li>
+				<li class="list-group-item">Iscrizione ristorante</li>
+				<li class="list-group-item">Sfoglia tutti i ristoranti</li>
+				<li class="list-group-item">Contatti</li>
+			</ul>
+			<ul class="list-group list-group-flush [ py-5 ]">
+				<li class="list-group-item">Privacy Policy</li>
+				<li class="list-group-item">Cookie Policy</li>
+			</ul>
+			<a href="" class="btn btn-primary">Logout</a>
+		</div>
+	</div>
+	<!-- #endregion -->
+
+	<!-- #region header -->
+	<header class="header [ py-5 ]">
+		<div class="header__bg">
+			<img src="https://via.placeholder.com/1900x500" alt="">
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="gallery">
+						<div class="gallery__preview">
+							<img src="https://via.placeholder.com/500x300">
+						</div>
+						<div class="gallery__preview">
+							<img src="https://via.placeholder.com/500x300">
+						</div>
+						<div class="gallery__preview">
+							<img src="https://via.placeholder.com/500x300">
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<h1>Titolo ristorante 1</h1>
+					<p>
+						Tel. +39 123456789
+					</p>
+					<p>
+						Via Nome 3<br>
+						Città CAP<br>
+						Provincia
+					</p>
+					<p>
+						<small>Distanza: 1.2km</small>
+					</p>
+					<div>
+						<a href="" class="badge bg-light text-dark">+ Consegna</a>
+						<a href="" class="badge bg-light text-dark">+ Ritiro</a>
+						<a href="" class="badge bg-light text-dark">+ Consumazione sul posto</a>
+					</div>
+					<div>
+						<a href="" class="badge bg-primary">✓ Vegetariano</a>
+						<a href="" class="badge bg-primary">✓ Italiano</a>
+						<a href="" class="badge bg-warning">× Molluschi</a>
+						<a href="" class="badge bg-warning">× Uova</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- #endregion -->
+
+	<!-- #region tabs -->
+	<div class="container-fluid [ pt-4 ]">
+		<ul class="nav nav-tabs [ justify-content-center ]">
+			<li class="nav-item">
+				<a class="nav-link active" href="#">Menu</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Orari di apertura</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">Gallery</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link">Storia</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link">Valori</a>
+			</li>
+		</ul>
+	</div>
+	<!-- #endregion -->
+
+	<!-- #region menu -->
+	<div class="container-fluid [ py-5 ] [ menu ]">
+		<div class="row">
+			<div class="col-lg-3">
+				<div class="sidebar-dish-category">
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item"><a href="">Pizze</a></li>
+						<li class="list-group-item"><a href="">Primi</a></li>
+						<li class="list-group-item"><a href="">Secondi di terra</a></li>
+						<li class="list-group-item"><a href="">Secondi di mare</a></li>
+						<li class="list-group-item"><a href="">Dolci</a></li>
+						<li class="list-group-item"><a href="">Bevande</a></li>
+					</ul>
+
+					<h5 class="mt-4 bg-primary p-1 d-inline-block">Cucina</h5>
+
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="" id="fcd1">
+						<label class="form-check-label" for="fcd1">
+							Italiana
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="" id="fcd2">
+						<label class="form-check-label" for="fcd2">
+							Vegetariana
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="" id="fcd3">
+						<label class="form-check-label" for="fcd3">
+							Vegana
+						</label>
+					</div>
+
+					<h5 class="mt-4 bg-warning p-1 d-inline-block">Allergie</h5>
+
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="" id="fcdc1">
+						<label class="form-check-label" for="fcdc1">
+							Molluschi
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="" id="fcdc2">
+						<label class="form-check-label" for="fcdc2">
+							Pesce
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="" id="fcdc3">
+						<label class="form-check-label" for="fcdc3">
+							Glutine
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-9">
+				<div class="row">
+					<div class="col-lg-7">
+						<div class="row">
+							<div class="col-auto [ pb-3 ]">
+								<div class="form-check form-switch">
+									<input class="form-check-input" type="checkbox" role="switch"
+										id="flexSwitchCheckDefault" checked>
+									<label class="form-check-label" for="flexSwitchCheckDefault">Visualizza solo i
+										piatti compatibili con le tue preferenze</label>
+								</div>
+							</div>
+							<div class="col-auto [ pb-3 ] [ ms-auto ]">
+								<a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+									class="btn btn-sm btn-info">Legenda</a>
+							</div>
+						</div>
+						<div class="dish-category">
+							<h3>Pizze</h3>
+							<div class="dish">
+								<div class="row [ flex-nowrap ]">
+									<div class="col-auto">
+										<p class="mb-1">
+											Bufalina
+										</p>
+										<a href="" class="badge bg-primary">✓ Vegetariano</a>
+										<a href="" class="badge bg-primary">✓ Italiano</a>
+										<a href="" class="badge bg-warning">× Molluschi</a>
+										<a href="" class="badge bg-warning">× Uova</a>
+										<div>
+											<a data-bs-toggle="collapse" href="#ingr1"><small>Ingredienti</small></a>
+											<div id="ingr1" class="collapse [ py-2 bg-light mt-2 ]">
+												<small>Ing, ing, ing, ing, ing</small>
+											</div>
+										</div>
+									</div>
+									<div class="col-auto [ ms-auto ]">
+										<p>€ 12,00</p>
+										<a href="" class="btn btn-primary btn-sm">Aggiungi</a>
+									</div>
+								</div>
+							</div>
+							<div class="dish">
+								<div class="row [ flex-nowrap ]">
+									<div class="col-auto">
+										<p class="mb-1">
+											Bufalina
+										</p>
+										<a href="" class="badge bg-primary">✓ Vegetariano</a>
+										<a href="" class="badge bg-primary">✓ Italiano</a>
+										<a href="" class="badge bg-warning">× Molluschi</a>
+										<a href="" class="badge bg-warning">× Uova</a>
+										<div>
+											<a data-bs-toggle="collapse" href="#ingr1"><small>Ingredienti</small></a>
+											<div id="ingr1" class="collapse [ py-2 bg-light mt-2 ]">
+												<small>Ing, ing, ing, ing, ing</small>
+											</div>
+										</div>
+									</div>
+									<div class="col-auto [ ms-auto ]">
+										<p>€ 12,00</p>
+										<a href="" class="btn btn-primary btn-sm">Aggiungi</a>
+									</div>
+								</div>
+							</div>
+							<div class="dish">
+								<div class="row [ flex-nowrap ]">
+									<div class="col-auto">
+										<p class="mb-1">
+											Bufalina
+										</p>
+										<a href="" class="badge bg-primary">✓ Vegetariano</a>
+										<a href="" class="badge bg-primary">✓ Italiano</a>
+										<a href="" class="badge bg-warning">× Molluschi</a>
+										<a href="" class="badge bg-warning">× Uova</a>
+										<div>
+											<a data-bs-toggle="collapse" href="#ingr1"><small>Ingredienti</small></a>
+											<div id="ingr1" class="collapse [ py-2 bg-light mt-2 ]">
+												<small>Ing, ing, ing, ing, ing</small>
+											</div>
+										</div>
+									</div>
+									<div class="col-auto [ ms-auto ]">
+										<p>€ 12,00</p>
+										<a href="" class="btn btn-primary btn-sm">Aggiungi</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="dish-category">
+							<h3>Pizze</h3>
+							<div class="dish">
+								<div class="row [ flex-nowrap ]">
+									<div class="col-auto">
+										<p class="mb-1">
+											Bufalina
+										</p>
+										<a href="" class="badge bg-primary">✓ Vegetariano</a>
+										<a href="" class="badge bg-primary">✓ Italiano</a>
+										<a href="" class="badge bg-warning">× Molluschi</a>
+										<a href="" class="badge bg-warning">× Uova</a>
+										<div>
+											<a data-bs-toggle="collapse" href="#ingr1"><small>Ingredienti</small></a>
+											<div id="ingr1" class="collapse [ py-2 bg-light mt-2 ]">
+												<small>Ing, ing, ing, ing, ing</small>
+											</div>
+										</div>
+									</div>
+									<div class="col-auto [ ms-auto ]">
+										<p>€ 12,00</p>
+										<a href="" class="btn btn-primary btn-sm">Aggiungi</a>
+									</div>
+								</div>
+							</div>
+							<div class="dish">
+								<div class="row [ flex-nowrap ]">
+									<div class="col-auto">
+										<p class="mb-1">
+											Bufalina
+										</p>
+										<a href="" class="badge bg-primary">✓ Vegetariano</a>
+										<a href="" class="badge bg-primary">✓ Italiano</a>
+										<a href="" class="badge bg-warning">× Molluschi</a>
+										<a href="" class="badge bg-warning">× Uova</a>
+										<div>
+											<a data-bs-toggle="collapse" href="#ingr1"><small>Ingredienti</small></a>
+											<div id="ingr1" class="collapse [ py-2 bg-light mt-2 ]">
+												<small>Ing, ing, ing, ing, ing</small>
+											</div>
+										</div>
+									</div>
+									<div class="col-auto [ ms-auto ]">
+										<p>€ 12,00</p>
+										<a href="" class="btn btn-primary btn-sm">Aggiungi</a>
+									</div>
+								</div>
+							</div>
+							<div class="dish">
+								<div class="row [ flex-nowrap ]">
+									<div class="col-auto">
+										<p class="mb-1">
+											Bufalina
+										</p>
+										<a href="" class="badge bg-primary">✓ Vegetariano</a>
+										<a href="" class="badge bg-primary">✓ Italiano</a>
+										<a href="" class="badge bg-warning">× Molluschi</a>
+										<a href="" class="badge bg-warning">× Uova</a>
+										<div>
+											<a data-bs-toggle="collapse" href="#ingr1"><small>Ingredienti</small></a>
+											<div id="ingr1" class="collapse [ py-2 bg-light mt-2 ]">
+												<small>Ing, ing, ing, ing, ing</small>
+											</div>
+										</div>
+									</div>
+									<div class="col-auto [ ms-auto ]">
+										<p>€ 12,00</p>
+										<a href="" class="btn btn-primary btn-sm">Aggiungi</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-5">
+						<div class="menu-order">
+							<h5>La tua selezione</h5>
+							<div class="row [ align-items-center mb-2 ]">
+								<div class="col-4">
+									Bufalina
+								</div>
+								<div class="col-4">
+									x1
+									<a href="" class="btn btn-sm btn-warning">x</a>
+								</div>
+								<div class="col-4 [ text-end ]">
+									€ 12,00
+								</div>
+							</div>
+							<div class="row [ align-items-center mb-2 ]">
+								<div class="col-4">
+									Bufalina
+								</div>
+								<div class="col-4">
+									x1
+									<a href="" class="btn btn-sm btn-warning">x</a>
+								</div>
+								<div class="col-4 [ text-end ]">
+									€ 12,00
+								</div>
+							</div>
+							<div class="row [ align-items-center mb-2 ]">
+								<div class="col-4">
+									Bufalina
+								</div>
+								<div class="col-4">
+									x1
+									<a href="" class="btn btn-sm btn-warning">x</a>
+								</div>
+								<div class="col-4 [ text-end ]">
+									€ 12,00
+								</div>
+							</div>
+
+							<p>Spese di spezione: gratuite</p>
+
+							<div class="row">
+								<div class="col-auto">
+									<h5>Totale</h5>
+								</div>
+								<div class="col-auto [ ms-auto ]">
+									€ 32,00
+								</div>
+							</div>
+
+							<div class="bg-light [ p-4 mt-4 ]">
+								<div class="mb-2">
+									<label>Altri commensali <a href="" class="bg-primary">?</a></label>
+									<input type="number" class="form-control">
+								</div>
+								<div class="mb-2">
+									<div class="form-check form-check-inline">
+										<input class="form-check-input" type="radio" id="inlineCheckbox2"
+											value="option2" name="consumazione" checked>
+										<label class="form-check-label" for="inlineCheckbox2">Prenotazione con
+											consumazione sul posto</label>
+									</div>
+									<div class="form-check form-check-inline">
+										<input class="form-check-input" type="radio" id="inlineCheckbox1"
+											value="option1" name="consumazione">
+										<label class="form-check-label" for="inlineCheckbox1">Consegna</label>
+									</div>
+								</div>
+								<div class="mb-2">
+									<label>Scegli la data</label>
+									<input type="date" class="form-control">
+								</div>
+
+								<div class="mb-2">
+									<label>Scegli l'orario</label>
+									<input type="time" class="form-control">
+								</div>
+
+								<a href="" class="btn btn-secondary w-100">Procedi</a>
+							</div>
+
+							<div class="bg-primary [ p-4 ]">
+								Abbiamo salvato la tua richiesta. Ora i tuoi amici possono collaborare sulla stessa
+								prenotazione e inserire il loro ordine scegliendo direttamente dal menu!<br>
+								Condividi con loro con questo link o mostra il QRCODE.
+								<div class="text-center [ py-4 ]">
+									<a href="">https://ifame.app/ordine/1234</a><br>
+									<img src="https://via.placeholder.com/100" alt="">
+								</div>
+								Per ogni modifica all'ordinazione riceverai una comunicazione. Ricorda che potrai in
+								qualsiasi momento, controllare e gestire la tua prenotazione dal tuo profilo.
+								<div class="text-center [ pt-4 ]">
+									<a href="" class="btn btn-secondary">Vai al tuo profilo</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- #endregion -->
+
+	<!-- #region modal legend -->
+	<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+		aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="staticBackdropLabel">Legenda</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex possimus dolores doloremque vel aperiam
+					aspernatur aliquam saepe enim ad voluptates delectus eos, eaque odio eius nemo id nostrum temporibus
+					autem.
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- #endregion -->
+
+	<!-- #region cta -->
+	<div class="cta">
+		<img src="https://via.placeholder.com/1900x400?text=CTA iscrizione ristoratore" class="w-100" alt="">
+	</div>
+	<!-- #endregion -->
+
+	<!-- #region footer -->
+	<footer class="footer [ bg-secondary text-white ]">
+		<div class="container">
+			<div class="row [ align-items-end ]">
+				<div class="col-lg-3 [ py-5 ]">
+					<img src="./images/logo-minimal.svg" alt=""><br><br>
+					EVEREST S.R.L.<br>
+					CARAVAGGIO (BG) Italy<br>
+					Chiamaci +39 3489807546<br>
+					commerciale@ifameapp.it<br>
+				</div>
+				<div class="col-lg-3 [ py-5 ]">
+					<ul class="list-unstyled">
+						<li><a class="text-white" href="">Privacy policy</a></li>
+						<li><a class="text-white" href="">Cookie policy</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 [ py-5 ]">
+					<ul class="list-unstyled">
+						<li><a class="text-white" href="">Link 1</a></li>
+						<li><a class="text-white" href="">Link 2</a></li>
+						<li><a class="text-white" href="">Link 3</a></li>
+						<li><a class="text-white" href="">Link 4</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 [ py-5 ]">
+					social feed
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- #endregion -->
+	<script src="./dist/app.js"></script>
+</body>
+
+</html>

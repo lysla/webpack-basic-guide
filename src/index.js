@@ -8,22 +8,6 @@ import "bootstrap";
 
 import "slick-carousel";
 import hcSticky from "hc-sticky";
-import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
-import { Moncal } from "./moncaljs/index";
-
-//#region bootstrap navbar + hamburger + body scroll lock
-var navbarMain = document.getElementById("navbarMain");
-navbarMain.addEventListener("show.bs.collapse", function () {
-  $(".navbar-toggler .hamburger").addClass("is-active");
-  let scrollableNav = document.querySelector("#navbarMain");
-  disableBodyScroll(scrollableNav);
-});
-navbarMain.addEventListener("hidden.bs.collapse", function () {
-  $(".navbar-toggler .hamburger").removeClass("is-active");
-  let scrollableNav = document.querySelector("#navbarMain");
-  enableBodyScroll(scrollableNav);
-});
-//#endregion
 
 //#region stickybar
 document.addEventListener("DOMContentLoaded", function () {
@@ -34,36 +18,35 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 //#endregion
 
-//#region slider
+//#region gallery
 $(function () {
-  $(".slider").slick({
-    arrows: false,
-    centerMode: true,
-    variableWidth: true,
+  $(".gallery").slick({
+    arrows: true,
+    dots: false,
   });
 });
 //#endregion
 
-//#region calendar
+//#region sticky dish categories and sidebar
+document.addEventListener("DOMContentLoaded", function () {
+  new hcSticky(".sidebar-dish-category", {
+    stickTo: ".menu",
+    top: 100,
+  });
+  new hcSticky(".menu-order", {
+    stickTo: ".menu",
+    top: 100,
+  });
+});
+//#endregion
+
+//#region filterbar__wrapper
 $(function () {
-  let events = [
-    {
-      date: new Date(),
-      html: "<p>evento</p>",
-    },
-    {
-      date: new Date(),
-      html: "<p>evento</p>",
-    },
-    {
-      date: new Date(),
-      html: "<p>evento</p>",
-    },
-    {
-      date: new Date(),
-      html: "<p>evento</p>",
-    },
-  ];
-  new Moncal(events);
+  $(".filterbar__wrapper").slick({
+    arrows: true,
+    dots: false,
+    variableWidth: true,
+    infinite: false,
+  });
 });
 //#endregion
